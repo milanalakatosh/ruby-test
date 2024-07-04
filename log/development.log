@@ -1,0 +1,229 @@
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-07-04 17:32:31.655827', '2024-07-04 17:32:31.655830') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateVideos (20240704173218)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "videos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "library_id" varchar, "guid" varchar, "title" varchar, "captions" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240704173218') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:35:45 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (1.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1657)
+  Rendered layout layouts/application.html.erb (Duration: 442.1ms | Allocations: 154788)
+Completed 200 OK in 523ms (Views: 462.7ms | ActiveRecord: 2.9ms | Allocations: 171113)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2024-07-04 20:35:47 +0300
+Processing by VideosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (Duration: 25.0ms | Allocations: 5772)
+  Rendered videos/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 6102)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 12263)
+Completed 200 OK in 62ms (Views: 36.1ms | ActiveRecord: 0.4ms | Allocations: 23528)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2024-07-04 20:35:49 +0300
+Processing by VideosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (Duration: 1.7ms | Allocations: 1108)
+  Rendered videos/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 7365)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 7626)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:36:05 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 598)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6771)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 7025)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:36:48 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2785)
+  Rendered layout layouts/application.html.erb (Duration: 136.3ms | Allocations: 59282)
+Completed 200 OK in 165ms (Views: 138.7ms | ActiveRecord: 2.0ms | Allocations: 69137)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:36:50 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 606)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 6815)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.2ms | Allocations: 7070)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:36:51 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6771)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms | Allocations: 7025)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:36:52 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 615)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 6886)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms | Allocations: 7141)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2024-07-04 20:38:09 +0300
+Processing by VideosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (Duration: 5.0ms | Allocations: 2684)
+  Rendered videos/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3014)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 9275)
+Completed 200 OK in 55ms (Views: 17.1ms | ActiveRecord: 0.4ms | Allocations: 29085)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:38:10 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 601)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6763)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms | Allocations: 7009)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:38:12 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 6756)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.1ms | Allocations: 7003)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:38:13 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 603)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6869)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms | Allocations: 7116)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:38:14 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 573)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 6736)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.1ms | Allocations: 6983)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 20:39:21 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2785)
+  Rendered layout layouts/application.html.erb (Duration: 173.8ms | Allocations: 65891)
+Completed 200 OK in 195ms (Views: 176.0ms | ActiveRecord: 1.6ms | Allocations: 75745)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2024-07-04 20:39:39 +0300
+Processing by VideosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (Duration: 6.5ms | Allocations: 2677)
+  Rendered videos/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3007)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 9300)
+Completed 200 OK in 52ms (Views: 16.1ms | ActiveRecord: 0.9ms | Allocations: 20375)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2024-07-04 20:39:41 +0300
+Processing by VideosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (Duration: 2.6ms | Allocations: 1109)
+  Rendered videos/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1192)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7353)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 7613)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2024-07-04 20:47:05 +0300
+Processing by VideosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/new.html.erb within layouts/application
+  Rendered videos/_form.html.erb (Duration: 3.3ms | Allocations: 1085)
+  Rendered videos/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1168)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7330)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 7591)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 21:35:40 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (2.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 882)
+  Rendered layout layouts/application.html.erb (Duration: 62.2ms | Allocations: 7086)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 3.0ms | Allocations: 7341)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 21:35:41 +0300
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 594)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 6799)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 7045)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 21:38:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:14
+  Rendered videos/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2812)
+  Rendered layout layouts/application.html.erb (Duration: 230.3ms | Allocations: 100332)
+Completed 200 OK in 267ms (Views: 233.1ms | ActiveRecord: 2.2ms | Allocations: 110293)
+
+
